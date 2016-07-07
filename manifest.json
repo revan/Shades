@@ -1,9 +1,9 @@
 {
-  "name": "CHANGE THIS : Extension boilerplate",
+  "name": "Shades",
   "version": "0.0.1",
   "manifest_version": 2,
-  "description": "This extension was created with the awesome extensionizr.com",
-  "homepage_url": "http://extensionizr.com",
+  "description": "Wikipedia Dankifier",
+  "homepage_url": "https://github.com/revan/shades",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
@@ -22,17 +22,20 @@
   "content_scripts": [
     {
       "matches": [
-        "https://www.google.com/*"
+        "https://*.wikipedia.org/wiki/*"
       ],
       "css": [
         "src/inject/inject.css"
       ]
     },
     {
-      "matches": [
-        "https://www.google.com/*"
+      "matches": [	  
+        "https://*.wikipedia.org/wiki/*"
       ],
       "js": [
+        "js/jquery.min.js",
+        "js/tracking-min.js",
+        "js/eye-min.js",
         "src/inject/inject.js"
       ]
     }
