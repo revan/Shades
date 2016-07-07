@@ -39,5 +39,6 @@
         "src/inject/inject.js"
       ]
     }
-  ]
+  ],
+  "web_accessible_resources": ["shades.png"]
 }

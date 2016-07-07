@@ -22,6 +22,24 @@ chrome.extension.sendMessage({}, function(response) {
 		tracking.track('#wiki-portrait', tracker);
 		tracker.on('track', function(event) {
 			console.log(event);
+
+			var shades = document.createElement('img');
+			shades.src = chrome.extension.getURL('shades.png');
+
+			shades.width = Math.max(event.data[0].width + event.data[0].x,
+				event.data[1].width + event.data[1].x) -
+				Math.min(event.data[0].x, event.data[1].x);
+
+			shades.height = Math.max(event.data[0].height + event.data[0].y,
+				event.data[1].height + event.data[1].y) -
+				Math.min(event.data[0].y, event.data[0].y);
+
+			shades.style.left = (img.offsetLeft + Math.min(event.data[0].x, event.data[1].x)) + 'px';
+			shades.style.top = (img.offsetTop + Math.min(event.data[0].y, event.data[1].y)) + 'px';
+			shades.style.position = 'absolute';
+
+			document.querySelector('#portrait-canvas').appendChild(shades);
+
 			event.data.forEach(function(rect) {
 				window.plot(rect.x, rect.y, rect.width, rect.height);
 			});
