@@ -9,25 +9,10 @@
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
-  "default_locale": "en",
-  "background": {
-    "scripts": [
-      "src/bg/background.js"
-    ],
-    "persistent": false
-  },
   "permissions": [
     "https://*.wikipedia.org/wiki/*"
   ],
   "content_scripts": [
-    {
-      "matches": [
-        "https://*.wikipedia.org/wiki/*"
-      ],
-      "css": [
-        "src/inject/inject.css"
-      ]
-    },
     {
       "matches": [	  
         "https://*.wikipedia.org/wiki/*"
