@@ -18,7 +18,7 @@ chrome.extension.sendMessage({}, function(response) {
 				shades.id = 'cool-shades';
 				shades.src = chrome.extension.getURL('shades.png');
 
-				shades.width = Math.max(event.data[0].width + event.data[0].x,
+				shades.width = 14 + Math.max(event.data[0].width + event.data[0].x,
 					event.data[1].width + event.data[1].x) -
 					Math.min(event.data[0].x, event.data[1].x);
 
@@ -26,7 +26,7 @@ chrome.extension.sendMessage({}, function(response) {
 					event.data[1].height + event.data[1].y) -
 					Math.min(event.data[0].y, event.data[0].y));
 
-				shades.style.left = (img.offsetLeft + Math.min(event.data[0].x, event.data[1].x)) + 'px';
+				shades.style.left = -7 + (img.offsetLeft + Math.min(event.data[0].x, event.data[1].x)) + 'px';
 				shades.style.top = 0;
 				shades.style.position = 'absolute';
 
